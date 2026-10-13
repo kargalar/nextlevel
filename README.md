@@ -13,7 +13,7 @@ Plan tasks, build routines, and see your progress in one focused workspace.
 
 </div>
 
-![NextLevel today view with an empty task list and a clear next step](docs/screenshots/nextlevel-today.png)
+![NextLevel today view with sample tasks, a pinned task, and routines](docs/screenshots/nextlevel-today.png)
 
 ## Turn plans into a routine
 
