@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/routine_button" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical"
+    android:gravity="center" android:padding="4dp"
+    android:background="@drawable/widget_background">
+    <TextView android:id="@+id/routine_title" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:gravity="center"
+        android:maxLines="1" android:ellipsize="end" android:textSize="11sp"
+        android:textColor="#FFFFFF" />
+    <TextView android:id="@+id/routine_action" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1" android:gravity="center"
+        android:textSize="22sp" android:textColor="#90CAF9" />
+    <TextView android:id="@+id/routine_progress" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:gravity="center"
+        android:maxLines="2" android:ellipsize="end" android:textSize="10sp"
+        android:textColor="#FFFFFF" />
+    <Chronometer android:id="@+id/routine_clock" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:gravity="center"
+        android:textSize="11sp" android:textColor="#FFFFFF" android:visibility="gone" />
+</LinearLayout>

@@ -1,0 +1,109 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+def releaseSigningConfigured = keystoreProperties['storeFile']
+def isReleaseBuildRequested = gradle.startParameter.taskNames.any {
+    it.toLowerCase().contains('release')
+}
+
+if (isReleaseBuildRequested && !releaseSigningConfigured) {
+    throw new GradleException(
+        'Release signing is not configured. Provide android/key.properties and a release keystore before building release.'
+    )
+}
+
+
+android {
+    namespace = "app.nextlevel"
+    compileSdk = 36
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        applicationId = "app.nextlevel"
+        minSdkVersion = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+        multiDexEnabled true
+        
+        // 16 KB page size support for Android 15+
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64', 'x86'
+        }
+    }
+    
+    packagingOptions {
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+    }
+
+    // productFlavors {
+    //     dev {
+    //         applicationId "app.nextlevel.debug"
+    //     }
+    //     release {
+    //         applicationId "app.nextlevel.release"
+    //     }
+    //     production {
+    //         applicationId "app.nextlevel"
+    //     }
+    // }
+
+    signingConfigs {
+        release {
+        keyAlias keystoreProperties['keyAlias']
+        keyPassword keystoreProperties['keyPassword']
+        storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+        storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig keystoreProperties['storeFile'] ? signingConfigs.release : signingConfigs.debug
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            // Keep OAuth fingerprints identical across debug and release APKs.
+            signingConfig releaseSigningConfigured ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
+}
+
+
+flutter {
+    source = "../.."
+}
+
+configurations.all {
+    resolutionStrategy {
+        force "androidx.glance:glance-appwidget:1.1.1"
+        force "androidx.glance:glance:1.1.1"
+        // Also force remote-creation-android to an older version because alpha11 requires SDK 37
+        force "androidx.compose.remote:remote-creation-android:1.0.0-alpha06"
+    }
+}

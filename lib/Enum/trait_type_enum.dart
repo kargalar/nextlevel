@@ -1,0 +1,4 @@
+enum TraitTypeEnum {
+  SKILL,
+  ATTRIBUTE,
+}

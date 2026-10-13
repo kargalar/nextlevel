@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NextLevel</string>
+    <string name="task_count_widget_description">Today\'s task count</string>
+    <string name="voice_task_shortcut_short_label">Voice task</string>
+    <string name="voice_task_shortcut_long_label">Add a task by voice</string>
+</resources>

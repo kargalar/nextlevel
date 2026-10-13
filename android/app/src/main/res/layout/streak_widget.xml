@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/streak_root" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="horizontal"
+    android:gravity="center_vertical" android:padding="10dp"
+    android:background="@drawable/widget_background">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="🔥" android:textSize="28sp" />
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1" android:orientation="vertical" android:paddingStart="8dp">
+        <TextView android:id="@+id/streak_label" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="10sp"
+            android:textColor="#B0BEC5" />
+        <TextView android:id="@+id/streak_count" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="0" android:textSize="24sp"
+            android:textStyle="bold" android:textColor="#FFFFFF" />
+        <Chronometer android:id="@+id/streak_status" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:maxLines="1" android:textSize="11sp"
+            android:textColor="#90CAF9" />
+        <TextView android:id="@+id/streak_freeze" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="10sp"
+            android:textColor="#B0BEC5" android:visibility="gone" />
+    </LinearLayout>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="›" android:textSize="28sp" android:textColor="#90CAF9" />
+</LinearLayout>

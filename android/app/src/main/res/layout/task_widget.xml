@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="12dp"
+	android:background="@drawable/widget_background">
+
+	<!-- Header -->
+	<LinearLayout
+		android:id="@+id/widget_header"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:gravity="center_vertical"
+		android:paddingStart="4dp"
+		android:paddingEnd="0dp"
+		android:paddingBottom="6dp">
+
+		<TextView
+			android:id="@+id/header_text"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="Today"
+			android:textSize="15sp"
+			android:textColor="#FFFFFF"
+			android:textStyle="bold"
+			android:letterSpacing="0.02" />
+
+		<TextView
+			android:id="@+id/task_count_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="12sp"
+			android:textColor="#707070"
+			android:text="0 tasks" />
+	</LinearLayout>
+
+	<!-- Scrollable task list via RemoteViewsService -->
+	<ListView
+		android:id="@+id/task_list"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:divider="@android:color/transparent"
+		android:dividerHeight="2dp"
+		android:paddingTop="0dp"
+		android:paddingBottom="4dp"
+		android:scrollbars="none" />
+
+	<!-- Empty state when no tasks -->
+	<TextView
+		android:id="@+id/empty_state"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Loading..."
+		android:textSize="13sp"
+		android:textColor="#606060"
+		android:gravity="center"
+		android:layout_marginTop="24dp"
+		android:padding="16dp" />
+
+</LinearLayout>

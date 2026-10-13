@@ -1,0 +1,26 @@
+name: flutter_alarm_app
+description: A Flutter application for scheduling and managing alarms with notifications.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_local_notifications: ^9.0.0
+  permission_handler: ^10.0.0
+  provider: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - android/app/src/main/res/raw/alarm_sound.mp3

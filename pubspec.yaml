@@ -1,0 +1,192 @@
+name: next_level
+description: "Gamify your todo list"
+
+version: 1.3.1+36
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Get images from assets
+  path_provider: ^2.1.1
+
+  # Date Formatter
+  intl: ^0.20.2
+
+  # UUID
+  uuid: ^4.4.0
+
+  # Font style
+  google_fonts: ^6.1.0
+
+  # Notification
+  flutter_local_notifications: ^19.0.0
+  timezone: ^0.10.0
+  alarm: ^5.1.4
+
+  # Audio player for sound preview
+  just_audio: ^0.9.40
+
+  # Save Data
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  hive_generator: ^2.0.1
+  shared_preferences: ^2.3.3
+
+  # Svg support
+  flutter_svg: ^2.0.9
+
+  # State Management
+  provider: ^6.1.2
+  equatable: ^2.0.5
+
+  # Responsive
+  flutter_screenutil: ^5.9.0
+
+  # GetX
+  get: ^4.6.6
+
+  # Splash Screen
+  flutter_native_splash: ^2.4.1
+
+  # Permissions
+  permission_handler: ^12.0.1
+
+  # Get device info
+  device_info_plus: ^12.2.0
+
+  # Auto Size Text
+  auto_size_text: ^3.0.0
+
+  # Duration Picker
+  duration_picker: ^1.2.0
+
+  # Emoji Picker
+  emoji_picker_flutter: ^4.3.0
+
+  # Slide Action
+  flutter_slidable: ^4.0.3
+
+  # Charts
+  fl_chart: ^1.1.0
+
+  # http
+  dio: ^5.7.0
+  connectivity_plus: ^7.0.0
+
+  # Localization
+  # dart run easy_localization:generate -S assets/translations -f keys -O lib/Service -o locale_keys.g.dart
+  easy_localization: ^3.0.7
+
+  # Windows
+  window_manager: ^0.5.1
+
+  # Background Service
+  flutter_background_service: ^5.1.0
+
+  # calender
+  table_calendar: ^3.1.3
+
+  # Home Widget
+  home_widget: ^0.8.1
+
+  # File Picker
+  file_picker: ^10.3.3
+
+  # In App Review
+  in_app_review: ^2.0.10
+
+  # Share files
+  share_plus: ^12.0.1
+
+  # Open files
+  open_file: ^3.5.10
+
+  path: ^1.9.0
+
+  # URL Launcher
+  url_launcher: ^6.3.1
+
+  # Email Sender
+  flutter_email_sender: ^8.0.0
+
+  # Linkify
+  flutter_linkify: ^6.0.0
+
+  # WebView
+  webview_flutter: ^4.13.0
+
+  # Package Info
+  package_info_plus: ^9.0.0
+
+  # Wakelock
+  wakelock_plus: ^1.2.8
+  collection: ^1.19.1
+  archive: ^4.0.9
+  google_sign_in: 6.3.0
+  googleapis: ^16.0.0
+  crypto: ^3.0.7
+  workmanager: ^0.9.0+3
+  lottie: ^3.3.2
+  vibration: ^3.1.8
+  http: ^1.6.0
+  speech_to_text: ^7.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Code Generation
+  build_runner: ^2.4.8
+  # dart run build_runner build --delete-conflicting-outputs
+
+  # Change App Package Name
+  change_app_package_name: ^1.5.0
+  rename_app: ^1.6.5
+
+  flutter_lints: ^6.0.0
+
+  flutter_launcher_icons: ^0.14.2
+  mockito: ^5.4.4
+
+# Splash Screen Settings
+flutter_native_splash:
+  color: "#0C0C0C" # Arka plan rengi
+  image: assets/logo/splash600.png # Splash görüntüsü
+  android_12:
+    image: assets/logo/splash1152.png # Android 12+ için splash görüntüsü
+    color: "#0C0C0C" # Arka plan rengi
+
+# App Icon Settings
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo/logo.png"
+  adaptive_icon_background: "#0C0C0C"
+  adaptive_icon_foreground: "assets/logo/logo_transparent.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
+
+flutter:
+  uses-material-design: true
+  assets:
+    # Translation files
+    - assets/translations/
+    # Logos
+    - assets/logo/
+    # Sounds
+    - assets/sounds/
+    # Animations
+    - assets/animations/
+
+  # fonts:
+  #   - family: FacelogIcon
+  #     fonts:
+  #       - asset: assets\icons\FacelogIcon.ttf
+
+  # New logo & splash command
+  # flutter pub run flutter_launcher_icons;
+  # flutter pub run flutter_native_splash:create;

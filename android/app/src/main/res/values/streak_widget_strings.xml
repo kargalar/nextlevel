@@ -1,0 +1,11 @@
+<resources>
+    <string name="streak_widget_description">Keep your daily streak visible</string>
+    <string name="streak_widget_label">Day streak</string>
+    <string name="streak_widget_today">%1$d / %2$d min</string>
+    <string name="streak_widget_minutes">%1$d min</string>
+    <string name="streak_widget_done">Today is safe</string>
+    <string name="streak_widget_keep">Keep it going</string>
+    <string name="streak_widget_progress">%1$d%% today</string>
+    <string name="streak_widget_start">Start today</string>
+    <string name="streak_widget_freeze">Freeze days: %1$d</string>
+</resources>

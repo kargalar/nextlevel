@@ -1,0 +1,24 @@
+{
+    "favorites.sortDirection": "ASC",
+    "favorites.resources": [
+        {
+            "filePath": "lib",
+            "group": "Default"
+        }
+    ],
+    "favorites.sortOrder": "ASC",
+    "CodeGPT.apiKey": "Gemini CLI",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "comment",
+                    "punctuation.definition.comment"
+                ],
+                "settings": {
+                    "foreground": "#00FF00"
+                }
+            }
+        ]
+    }
+}
